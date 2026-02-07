@@ -7,7 +7,7 @@ namespace API.Controllers;
 
 [ApiController]
 [Route("api/inventario")]
-//[Authorize] // 🔐 TODO INVENTARIO REQUIERE TOKEN
+[Authorize] // 🔐 TODO INVENTARIO REQUIERE TOKEN
 public class InventarioController : ControllerBase
 {
     private readonly IInventarioRepository _repo;
