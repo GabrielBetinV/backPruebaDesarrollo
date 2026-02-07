@@ -67,7 +67,7 @@ public class SeguridadDapperRepository : ISeguridadRepository
         using var conn = _factory.Create();
 
         var user = await conn.QueryFirstOrDefaultAsync<LoginDbDto>(
-            @"SELECT USUARIO_ID   AS UsuarioId,
+            @"SELECT USUARIO_ID   AS Usuario_Id,
                  USERNAME     AS Username,
                  PASSWORD_HASH AS PasswordHash
           FROM SEGURIDAD.USUARIOS

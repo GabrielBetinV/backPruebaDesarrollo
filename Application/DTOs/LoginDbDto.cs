@@ -4,8 +4,9 @@ using System.Text;
 
 namespace Application.DTOs;
 
-public record LoginDbDto(
-    int Usuario_Id,
-    string Username,
-    string PasswordHash
-);
+public class LoginDbDto
+{
+    public int Usuario_Id { get; set; }
+    public string Username { get; set; }
+    public string PasswordHash { get; set; }
+}

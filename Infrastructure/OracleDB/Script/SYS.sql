@@ -38,3 +38,64 @@ GRANT SELECT, INSERT, UPDATE, DELETE ON seguridad.usuarios TO app_role;
 GRANT SELECT, INSERT, UPDATE, DELETE ON seguridad.usuario_perfil TO app_role;
 GRANT SELECT, INSERT, UPDATE, DELETE ON seguridad.perfiles TO app_role;
 GRANT EXECUTE ON seguridad.pkg_seguridad TO app_role;
+
+
+GRANT SELECT, INSERT, UPDATE, DELETE
+ON seguridad.usuarios
+TO app_user;
+
+GRANT SELECT, INSERT, UPDATE, DELETE
+ON seguridad.usuario_perfil
+TO app_user;
+
+GRANT SELECT, INSERT, UPDATE, DELETE
+ON seguridad.perfiles
+TO app_user;
+
+SELECT * FROM user_tab_privs;
+GRANT SELECT ON seguridad.seq_usuarios TO app_user;
+
+
+GRANT SELECT, INSERT, UPDATE, DELETE
+ON inventario.productos
+TO app_user;
+
+GRANT SELECT, INSERT, UPDATE, DELETE
+ON inventario.producto_detalle
+TO app_user;
+
+GRANT SELECT, INSERT, UPDATE, DELETE
+ON inventario.entradas
+TO app_user;
+
+GRANT SELECT, INSERT, UPDATE, DELETE
+ON inventario.salidas
+TO app_user;
+
+
+GRANT SELECT ON inventario.seq_entradas TO app_user;
+GRANT SELECT ON inventario.seq_salidas TO app_user;
+GRANT SELECT ON inventario.seq_productos TO app_user;
+GRANT SELECT ON inventario.seq_salidas TO app_user;
+
+GRANT SELECT, INSERT, UPDATE, DELETE
+ON inventario.productos
+TO app_user;
+
+GRANT SELECT, INSERT, UPDATE, DELETE
+ON inventario.producto_detalle
+TO app_user;
+
+GRANT SELECT, INSERT, UPDATE, DELETE
+ON inventario.entradas
+TO app_user;
+
+GRANT SELECT, INSERT, UPDATE, DELETE
+ON inventario.salidas
+TO app_user;
+
+
+GRANT SELECT ON inventario.seq_entradas TO app_user;
+GRANT SELECT ON inventario.seq_salidas TO app_user;
+GRANT SELECT ON inventario.seq_productos TO app_user;
+GRANT SELECT ON inventario.seq_producto_detalle TO app_user;
