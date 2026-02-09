@@ -8,5 +8,12 @@ namespace Domain.Entities
     {
         public int UsuarioId { get; set; }
         public string Username { get; set; } = string.Empty;
+
+
+        public Usuario(int usuarioId, string username)
+        {
+            UsuarioId = usuarioId;
+            Username = username;
+        }
     }
 }

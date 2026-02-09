@@ -12,21 +12,21 @@ namespace API.Controllers;
 [AllowAnonymous] // 👈 LOGIN Y REGISTRO NO REQUIEREN TOKEN
 public class AuthController : ControllerBase
 {
-    private readonly ISeguridadRepository _repo;
+    private readonly ISeguridadService _service;
     private readonly JwtTokenService _jwt;
 
     public AuthController(
-        ISeguridadRepository repo,
+        ISeguridadService service,
         JwtTokenService jwt)
     {
-        _repo = repo;
+        _service = service;
         _jwt = jwt;
     }
 
     [HttpPost("register")]
     public async Task<IActionResult> Register([FromBody] RegisterUserRequest req)
     {
-        ApiResponse<UsuarioDto> result = await _repo.RegistrarAsync(req);
+        ApiResponse<UsuarioDto> result = await _service.RegistrarAsync(req);
 
         return result.Status switch
         {
@@ -40,7 +40,7 @@ public class AuthController : ControllerBase
     [HttpPost("login")]
     public async Task<IActionResult> Login(LoginRequest req)
     {
-        var result = await _repo.LoginAsync(req);
+        var result = await _service.LoginAsync(req);
 
         if (result.Status != "SUCCESS")
             return Unauthorized(new ApiResponse<EmptyDto>(

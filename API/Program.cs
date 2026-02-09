@@ -137,6 +137,7 @@
 
 using API.Security;
 using Application.Interface;
+using Application.Services;
 using Infrastructure.OracleDB.Dapper;
 using Infrastructure.OracleDB.SP;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -289,6 +290,10 @@ builder.Services.AddAuthorization();
 // 🔐 SERVICIOS
 // ===============================
 builder.Services.AddScoped<JwtTokenService>();
+
+builder.Services.AddScoped<IInventarioService, InventarioService>();
+builder.Services.AddScoped<ISeguridadService, SeguridadService>();
+
 
 // ===============================
 // 🔀 DATA ACCESS STRATEGY
